@@ -2,20 +2,25 @@
     import { ref, watch } from 'vue';
     import type { Countries } from '@/interfaces/interfaces.ts';
     import axios from 'axios';
+    import CardCountry from '@/components/CardCountry.vue';
 
-    const country = ref('')
     const searchCountry = ref('')
-    const imgCountry = ref('')
+    const nameCountry = ref('')
+    const imageCountry = ref('')
+    const capitalCountry = ref('')
+    const populationCountry = ref(0)
 
-    watch(country, async () => {
-        if (country.value !== '') {
-            await axios.get(`https://restcountries.com/v3.1/name/${country.value}`)
+    watch(searchCountry, async () => {
+        if (searchCountry.value !== '') {
+            await axios.get(`https://restcountries.com/v3.1/name/${searchCountry.value}`)
             .then(response => {
                 const data = response.data
 
                 data.forEach((country: Countries) => {
-                    searchCountry.value = country.name.common
-                    imgCountry.value = country.flags.png
+                    nameCountry.value = country.name.common
+                    imageCountry.value = country.flags.png
+                    capitalCountry.value = country.capital
+                    populationCountry.value = country.population
                 })
             })
             .catch((error) => {
@@ -27,7 +32,24 @@
 </script>
 
 <template>
-    
+    <v-container>
+        <v-row>
+            <v-col>
+                <v-text-field class="w-75 mx-auto" append-inner-icon="mdi-magnify" clearable v-model="searchCountry" label="Search your country" variant="outlined"/>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col>
+                <CardCountry
+                    v-if="searchCountry !== ''"
+                    :name-country="nameCountry"
+                    :capital="capitalCountry[0]"
+                    :image="imageCountry"
+                    :population="populationCountry"
+                />
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <style scoped>
