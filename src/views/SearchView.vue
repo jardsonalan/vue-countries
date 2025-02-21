@@ -40,6 +40,15 @@
 
 <template>
     <v-container>
+        <v-row>
+            <v-col>
+                <v-img
+                    src="logo.png"
+                    max-width="200"
+                    class="mx-auto"
+                />
+            </v-col>
+        </v-row>
         <v-row class="mt-4">
             <v-col>
                 <v-text-field 
