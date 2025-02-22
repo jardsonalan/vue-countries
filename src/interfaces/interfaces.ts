@@ -11,5 +11,5 @@ export interface Countries {
     maps: {
         googleMaps: string;
     };
-    independent: string;
+    independent: boolean;
 }
