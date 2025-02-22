@@ -5,33 +5,35 @@
     import CardCountry from '@/components/CardCountry.vue';
     import ButtonExampleCountry from '@/components/ButtonExampleCountry.vue';
 
-    const searchCountry = ref('')
-    const nameCountry = ref('')
-    const imageCountry = ref('')
-    const capitalCountry = ref('')
-    const populationCountry = ref(0)
-    const googleMaps = ref('')
-    const area = ref(0)
-    const independent = ref('')
+    const searchCountry = ref('') // Recebe o valor informado pelo usuário
+    const nameCountry = ref('') // Armazena o nome do país
+    const imageCountry = ref('') // Armazena a URL da imagem da bandeira do país
+    const capitalCountry = ref('') // Armazena o nome da capital do país
+    const populationCountry = ref(0) // Armazena a quantidade da população do país
+    const googleMaps = ref('') // Armazena a URL do Google Maps do país
+    const area = ref(0) // Armazena a quantidade da área do país
+    const independent = ref(false) // Armazena a informação se o país é independente
 
+    // Faz a busca do país informado pelo usuário dentro da API
     watch(searchCountry, async () => {
-        if (searchCountry.value !== '') {
-            await axios.get(`https://restcountries.com/v3.1/name/${searchCountry.value}`)
-            .then(response => {
-                const data = response.data
+        if (searchCountry.value !== '') { // Caso searchCountry não seja vazio, executa a requisição
+            await axios.get(`https://restcountries.com/v3.1/name/${searchCountry.value}`) // URL da API
+            .then(response => { // Caso a requisição seja válida
+                const data = response.data // Armazena a resposta da requisição na variável data
 
+                // Percorre a variável (data) para pegar cada dado específico das variáveis
                 data.forEach((country: Countries) => {
-                    nameCountry.value = country.name.common
-                    imageCountry.value = country.flags.png
-                    capitalCountry.value = country.capital
-                    populationCountry.value = country.population
-                    googleMaps.value = country.maps.googleMaps
-                    area.value = country.area
-                    independent.value = country.independent
+                    nameCountry.value = country.name.common // Atribui o nome do país a variável reativa (nameCountry)
+                    imageCountry.value = country.flags.png // Atribui a URL da imagem da bandeira a variável reativa (imageCountry)
+                    capitalCountry.value = country.capital // Atribui o nome da capital a variável reativa (capitalCountry)
+                    populationCountry.value = country.population // Atribui a quantidade da população a variável reativa (populationCountry)
+                    googleMaps.value = country.maps.googleMaps // Atribui a URL do Google Maps a variável reativa (googleMaps)
+                    area.value = country.area // Atribui o valor da área do país a variável reativa (area)
+                    independent.value = country.independent // Atribui a resposta se o país é independente a variável reativa (independent)
                 })
             })
-            .catch((error) => {
-                console.log('Error ao consumir API: ', error)
+            .catch((error) => { // Caso a requisição seja inválida
+                console.log('Error ao consumir API: ', error) // Retorna uma mensagem no terminal com a especificação do erro
             })
         }
     })
