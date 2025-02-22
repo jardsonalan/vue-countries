@@ -6,7 +6,7 @@ defineProps({
     population: Number,
     googleMaps: String,
     area: Number,
-    independent: String
+    independent: Boolean
 })
 </script>
 
