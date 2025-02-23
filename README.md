@@ -1,39 +1,67 @@
-# vue-countries
+# 🌍 Vue Countries
 
-This template should help get you started developing with Vue 3 in Vite.
+![Vue.js](https://img.shields.io/badge/Vue.js-3-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-4-blue)
+![Vuetify](https://img.shields.io/badge/Vuetify-3-purple)
+![License](https://img.shields.io/github/license/jardsonalan/vue-countries)
 
-## Recommended IDE Setup
+## 📖 Sobre o Projeto
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+O **Vue Countries** é uma aplicação web desenvolvida com **Vue 3**, **TypeScript** e **Vuetify** que exibe informações sobre países de todo o mundo. O objetivo do projeto é permitir que os usuários explorem detalhes sobre diferentes nações, como bandeira, capital, população e região, utilizando a **REST Countries API**.
 
-## Type Support for `.vue` Imports in TS
+## 🚀 Funcionalidades
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+✅ Barra de pesquisa para encontrar países rapidamente
+✅ Interface responsiva e estilizada com **Vuetify**
 
-## Customize configuration
+## 🛠️ Tecnologias Utilizadas
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- **Vue.js 3** – Framework JavaScript progressivo para construção de interfaces web modernas
+- **TypeScript** – Superset do JavaScript que adiciona tipagem estática ao código
+- **Vuetify** – Biblioteca de componentes Vue baseada no Material Design
+- **REST Countries API** – API pública que fornece dados sobre países
 
-## Project Setup
+## 📥 Como executar o projeto
 
-```sh
+### **1️⃣ Clone o repositório:**
+```bash
+git clone https://github.com/jardsonalan/vue-countries.git
+```
+
+### **2️⃣ Acesse a pasta do projeto:**
+```bash
+cd vue-countries
+```
+
+### **3️⃣ Instale as dependências:**
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
+### **4️⃣ Inicie o servidor de desenvolvimento:**
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## 📌 Contribuindo
+Contribuições são bem-vindas! Se quiser sugerir melhorias ou adicionar novos recursos:
+1. Faça um **fork** do repositório;
+2. Crie uma **branch** para sua feature:
 
-```sh
-npm run build
-```
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Faça o **commit** das alterações:
 
-### Lint with [ESLint](https://eslint.org/)
+   ```bash
+   git commit -m "Adicionando nova feature"
+   ```
+4. Envie para o repositório remoto:
 
-```sh
-npm run lint
-```
+   ```bash
+   git push origin minha-feature
+   ```
+5. Abra um **Pull Request** 🚀
+
+## 📄 Licença
+Este projeto está sob a licença **MIT** – veja o arquivo LICENSE para mais detalhes.
