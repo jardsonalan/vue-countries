@@ -3,7 +3,6 @@
 ![Vue.js](https://img.shields.io/badge/Vue.js-3-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-4-blue)
 ![Vuetify](https://img.shields.io/badge/Vuetify-3-purple)
-![License](https://img.shields.io/github/license/jardsonalan/vue-countries)
 
 ## 📖 Sobre o Projeto
 
@@ -12,6 +11,7 @@ O **Vue Countries** é uma aplicação web desenvolvida com **Vue 3**, **TypeScr
 ## 🚀 Funcionalidades
 
 ✅ Barra de pesquisa para encontrar países rapidamente
+
 ✅ Interface responsiva e estilizada com **Vuetify**
 
 ## 🛠️ Tecnologias Utilizadas
